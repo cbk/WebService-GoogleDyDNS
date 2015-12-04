@@ -10,7 +10,7 @@
 ## using the HTTP::UserAgent module.
 ##
 ##########################################################
-unit class WebService::GoogleDyDNS {
+class WebService::GoogleDyDNS {
   use WebService::HazIP;
   use HTTP::UserAgent;
 
@@ -19,7 +19,7 @@ unit class WebService::GoogleDyDNS {
   has $.password is rw;
   has $.domainName is rw;
   has Bool $.outdated is rw;
-  
+
   my $lastIPFile = $*CWD ~ "/" ~ self.domainName.lc ~ ".lastIP";
 
 ##########################################################

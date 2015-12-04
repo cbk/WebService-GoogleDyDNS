@@ -10,6 +10,8 @@
 ## using the HTTP::UserAgent module.
 ##
 ##########################################################
+use v6;
+
 class WebService::GoogleDyDNS {
   use WebService::HazIP;
   use HTTP::UserAgent;
@@ -43,6 +45,8 @@ class WebService::GoogleDyDNS {
       open( $lastIPFile, :w).close;
       self.outdated = True;
     }
+
+    #if $data ~~ / ^^([\d ** 1..3] ** 4 % '.')$$ / { return $data; }
   }
   ##########################################################
   method updateIP() {
@@ -69,3 +73,15 @@ class WebService::GoogleDyDNS {
 
 }
 ##########################################################
+
+
+
+
+
+##########################################################
+multi sub MAIN( :$domain, :$login, :$password ) {
+
+  my $updater = WebService::GoogleDyDNS.new(domainName => $domain, login => $login , password => $password );
+  $updater.checkPreviousIP();
+  if $updater.outdated { say $updater.updateIP(); } else { say "No change. No action taken."; }
+}

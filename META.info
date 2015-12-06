@@ -7,5 +7,5 @@
            "WebService::GoogleDyDNS"    : "lib/WebService/GoogleDyDNS.pm6"
        },
        "depends" : [ "LWP::Simple", "HTTP::UserAgent" ],
-       "source-url" : "git://github.com/cbk/WebService-GoogleDyDNS"
+       "source-url" : "git://github.com/cbk/WebService-GoogleDyDNS.git"
 }

@@ -10,7 +10,6 @@
 ## using the HTTP::UserAgent module.
 ##
 ##########################################################
-
 class WebSercice::DyDNS {
   use WebService::HazIP;
   use HTTP::UserAgent;
@@ -37,7 +36,7 @@ class WebSercice::DyDNS {
       ## Open file and read lines into data array.
       $fh = open($lastIPFile, :r);
       my @dataFile = $fh.IO.lines;
-      
+
       if @dataFile[1].Str eq self.currentHostPublicIP { self.outdated = False; } else { self.outdated = True; }
       $fh.close;
     } else {

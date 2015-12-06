@@ -12,7 +12,7 @@
 ##########################################################
 use v6;
 
-class WebService::GoogleDyDNS {
+class DyDNS {
   use WebService::HazIP;
   use HTTP::UserAgent;
 
@@ -38,15 +38,16 @@ class WebService::GoogleDyDNS {
       ## Open file and read lines into data array.
       $fh = open($lastIPFile, :r);
       my @dataFile = $fh.IO.lines;
-      if @dataFile[1] eq self.currentHostPublicIP { self.outdated = False; } else { self.outdated = True; }
+      say @dataFile.perl;
+      say @dataFile[1].perl;
+
+      if @dataFile[1].Str eq self.currentHostPublicIP { self.outdated = False; } else { self.outdated = True; }
       $fh.close;
     } else {
       ## File does not exist, make new one
       open( $lastIPFile, :w).close;
       self.outdated = True;
     }
-
-    #if $data ~~ / ^^([\d ** 1..3] ** 4 % '.')$$ / { return $data; }
   }
   ##########################################################
   method updateIP() {
@@ -63,7 +64,10 @@ class WebService::GoogleDyDNS {
       return $response.content;
       if $response.content ~~ / good / {
         my $fh = open(self.lastIPFile, :w);
+        $fh.say( self.domainName );
         $fh.say( self.currentHostPublicIP );
+        $fh.say( self.login );
+        $fh.say( self.password );
         $fh.close;
       }
     } else {
@@ -81,7 +85,7 @@ class WebService::GoogleDyDNS {
 ##########################################################
 multi sub MAIN( :$domain, :$login, :$password ) {
 
-  my $updater = WebService::GoogleDyDNS.new(domainName => $domain, login => $login , password => $password );
+  my $updater = DyDNS.new(domainName => $domain, login => $login , password => $password );
   $updater.checkPreviousIP();
   if $updater.outdated { say $updater.updateIP(); } else { say "No change. No action taken."; }
 }

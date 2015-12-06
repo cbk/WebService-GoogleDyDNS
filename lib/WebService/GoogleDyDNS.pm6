@@ -10,7 +10,7 @@
 ## using the HTTP::UserAgent module.
 ##
 ##########################################################
-unit class WebSercice::DyDNS {
+unit class WebSercice::DyDNS 
   use WebService::HazIP;
   use HTTP::UserAgent;
 
@@ -71,5 +71,5 @@ unit class WebSercice::DyDNS {
     }
   }
 
-}
+
 ##########################################################

@@ -1,4 +1,4 @@
-# perl6-WebService-HazIP
+# perl6-WebService-GoogleDyDNS
 
 
 ## SYNOPSIS

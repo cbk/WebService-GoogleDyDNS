@@ -1,4 +1,5 @@
-# perl6-WebService-GoogleDyDNS [![Build Status](https://travis-ci.org/cbk/WebService-GoogleDyDNS.svg?branch=master)](https://travis-ci.org/cbk/WebService-GoogleDyDNS)
+# perl6-WebService-GoogleDyDNS 
+[![Build Status](https://travis-ci.org/cbk/WebService-GoogleDyDNS.svg?branch=master)](https://travis-ci.org/cbk/WebService-GoogleDyDNS)
 
 
 ## SYNOPSIS

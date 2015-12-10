@@ -18,7 +18,7 @@ is then called to update the IP address using the HTTP::UserAgent module.
 * One of the response codes from domains.google.com
 * "No change. No action taken."
 
-## Example usage
+## Example usage:
 
 ```
 use v6;

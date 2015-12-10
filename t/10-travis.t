@@ -5,6 +5,3 @@ ok(1);
 
 my $ipObj = WebService::GoogleDyDNS.new;
 
-
-
-done-testing();

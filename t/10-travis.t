@@ -4,6 +4,6 @@ use WebService::GoogleDyDNS;
 ok(1);
 
 my $ipObj = WebService::GoogleDyDNS.new;
-is $ipObj "new";
+is $ipObj, "new";
 
 done-testing();

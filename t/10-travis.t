@@ -3,9 +3,7 @@ use WebService::GoogleDyDNS;
 
 ok(1);
 
-if (%*ENV<TRAVIS>) {
-    diag "running on travis";
-    my $ipObj = WebService::GoogleDyDNS.new;
-}
+my $ipObj = WebService::GoogleDyDNS.new;
+is $ipObj "new";
 
 done-testing();

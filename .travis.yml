@@ -6,6 +6,4 @@ install:
   - panda --notests installdeps .
   - panda --notests install WebService::HazIP
   - panda --notests install HTTP::UserAgent
-script:
-- prove -v -e 'perl6 -Ilib' t/
 sudo: false

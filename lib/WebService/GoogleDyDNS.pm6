@@ -57,6 +57,7 @@ method batchMode( @dataSet ) {
   }
   return @dataSet;
 }
+##########################################################
   method checkPreviousIP() {
     my $fh;
     my $previousIP;

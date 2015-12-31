@@ -10,6 +10,30 @@ use v6;
 use WebService::GoogleDyDNS;
 
 ##########################################################
+## Start up in batch mode.
+multi sub MAIN ( ) {
+  my $updater = WebService::GoogleDyDNS.new();
+  my @data;
+  my $dataFile = $*CWD ~ "/ipUpdater.data";
+
+  ## Open data set form file;
+  my $readFile = open $dataFile, :r;
+  for $readFile.lines ->  $line {
+    @data.push($line);
+  }
+  $readFile.close;
+
+  ## Send data to be checked by updater obj.
+  my @results = $updater.batchMode(@data);
+
+  # write current data set to file...
+  my $writeFile = open $dataFile, :w;
+  for @data -> $line {
+    say $writeFile.say($line);
+  }
+  $writeFile.close;
+}
+##########################################################
 multi sub MAIN( :$domain, :$login, :$password ) {
 
   my $updater = WebService::GoogleDyDNS.new(domainName => $domain, login => $login , password => $password );

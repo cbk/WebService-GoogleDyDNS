@@ -5,5 +5,5 @@ install:
   - rakudobrew build-panda
   - panda --notests installdeps .
   - panda --notests install WebService::HazIP
-  - panda --notests install HTTP::UserAgent
+  
 sudo: false

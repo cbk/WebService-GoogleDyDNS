@@ -6,6 +6,7 @@ install:
   - panda --notests installdeps .
   - panda-build
   - panda --notests install WebService::HazIP
+  - panda --notests install HTTP::UserAgent
 
 script:
   - PERL6LIB=lib prove -e perl6 -vr t/

@@ -1,4 +1,8 @@
+use v6;
 use Test;
+
 use WebService::GoogleDyDNS;
 
-ok my $ipObj = WebService::GoogleDyDNS.new;
+ok 1, 'WebService::GoogleDyDNS has loaded.';
+
+done-testing;

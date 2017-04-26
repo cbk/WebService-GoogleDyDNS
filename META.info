@@ -1,5 +1,6 @@
 {
        "name" : "WebService::GoogleDyDNS",
+       "license" : "Artistic-2.0",
        "version" : "1.0.0",
        "description" : "Simple web service used to update an IP address on domains.google.com if the current one has changed. ",
        "author" : "Michael",
